@@ -8,7 +8,4 @@ public class PassengerResponseDto {
     private String lastName;
     private String gender;
     private Date birthDate;
-    private String docType;
-    private String passportNumber;
-    private Date passportExpirationDate;
 }
