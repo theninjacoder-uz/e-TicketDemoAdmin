@@ -15,7 +15,8 @@ public class AuthController {
     private final UserService userService;
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public String login(){
-        return "authentication-login";
+        return "index";
+//        return "authentication-login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
