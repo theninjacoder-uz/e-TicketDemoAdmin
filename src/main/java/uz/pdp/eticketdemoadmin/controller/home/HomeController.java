@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.HashMap;
 
 @Controller
-@RequestMapping("/index")
 public class HomeController {
+
+
 }
