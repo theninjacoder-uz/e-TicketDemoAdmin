@@ -9,17 +9,16 @@ import uz.pdp.eticketdemoadmin.service.user.UserService;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(value = "/", produces = "application/json", method = {RequestMethod.POST, RequestMethod.GET, RequestMethod.DELETE})
+@RequestMapping(value = "/")
 public class AuthController {
 
     private final UserService userService;
-    @RequestMapping(value = "/", produces = "application/json", method = RequestMethod.GET)
-    public String getLoginPage(){
+    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
+    public String login(){
         return "authentication-login";
-//        return "pages-gallery";
     }
 
-    @RequestMapping(value = "/login ", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String checkUserByPhoneNumber(@RequestBody UserReceiveDto userReceiveDto){
         boolean res = userService.login(userReceiveDto);
         if(res)

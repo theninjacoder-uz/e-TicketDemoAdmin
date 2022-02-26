@@ -68,11 +68,12 @@
                 </div>
                 <!-- Form -->
                 <form
-                        action="/login"
-                        method="POST"
                         class="form-horizontal mt-3"
+                        role="form"
+                        th:action="@{/login}"
+                        th:method="post"
                 >
-<!--                        id="loginform"-->
+
                     <div class="row pb-4">
                         <div class="col-12">
                             <div class="input-group mb-3">
