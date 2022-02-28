@@ -389,7 +389,7 @@
                                             </div>
 
                                             <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="speed">Capacity</label>
+                                                <label class="sr-only" for="speed">Speed</label>
                                                 <input type="text" class="form-control" id="speed" name="averageSpeed" placeholder="Train speed">
                                             </div>
 
@@ -423,8 +423,20 @@
                                             <tr th:each = "train: ${trains}">
                                                 <td th:utext="${train.name}"/>
                                                 <td th:utext="${train.model}"/>
-                                                <td th:utext="${train.capacity}"/>
+                                                <td>
+                                                    <span th:text="${train.capacity}"></span>
+                                                    <span>
+                                                    <ul class="d-flex justify-content-end">
+                                                        <li class="mr-3">
+                                                            <a th:href="'/train/edite?id=' + ${train.id}" class="text-secondary">
+                                                                <i class="fa fa-edit"></i></a></li>
+                                                        <li><a th:href="'/train/delete?id=' + ${train.id}"  class="text-danger"><i class="ti-trash"></i></a></li>
+                                                    </ul>
+                                                        </span>
+                                                </td>
                                                 <td th:utext="${train.averageSpeed}"/>
+
+
                                             </tr>
                                             </tbody>
                                         </table>

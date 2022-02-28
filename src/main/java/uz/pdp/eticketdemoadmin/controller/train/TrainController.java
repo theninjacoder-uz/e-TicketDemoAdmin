@@ -11,7 +11,6 @@ import uz.pdp.eticketdemoadmin.service.train.TrainService;
 @Controller
 @RequestMapping("/train")
 @RequiredArgsConstructor
-
 public class TrainController {
     private final TrainService trainService;
 
@@ -26,5 +25,14 @@ public class TrainController {
         boolean add = trainService.add(trainReceiveDto);
         model.addAttribute("trains", trainService.getList());
         return "train";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id){
+        boolean delete = trainService.delete(id);
+        if(delete)
+        return "train";
+        else
+            return "404";
     }
 }
