@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import uz.pdp.eticketdemoadmin.model.recieve.UserReceiveDto;
+import uz.pdp.eticketdemoadmin.model.recieve.user.UserReceiveDto;
 import uz.pdp.eticketdemoadmin.service.user.UserService;
 
 @Controller
@@ -13,7 +13,7 @@ import uz.pdp.eticketdemoadmin.service.user.UserService;
 public class AuthController {
 
     private final UserService userService;
-    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/", "/login"})
     public String login(){
         return "login";
 //        return "authentication-login";

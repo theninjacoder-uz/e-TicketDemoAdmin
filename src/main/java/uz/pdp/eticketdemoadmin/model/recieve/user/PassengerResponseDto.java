@@ -1,4 +1,4 @@
-package uz.pdp.eticketdemoadmin.model.recieve;
+package uz.pdp.eticketdemoadmin.model.recieve.user;
 
 import java.util.Date;
 

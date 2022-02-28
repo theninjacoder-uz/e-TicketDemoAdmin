@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import uz.pdp.eticketdemoadmin.model.recieve.UserReceiveDto;
+import uz.pdp.eticketdemoadmin.model.recieve.user.UserReceiveDto;
 
 @Service
 @RequiredArgsConstructor
