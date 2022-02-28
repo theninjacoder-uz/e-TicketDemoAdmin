@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" >
 
 <head>
     <meta charset="utf-8">
@@ -371,26 +371,26 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title">Add new train</h4>
-                                    <form th:action="@{/train}" method="POST">
+                                    <form th:action="@{/train}"  method="POST">
                                         <div class="form-row align-items-center">
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="name">Name</label>
-                                                <input type="text" class="form-control" id="name" placeholder="Train name">
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Train name">
                                             </div>
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="model">Model</label>
-                                                <input type="text" class="form-control" id="model" placeholder="Train model">
+                                                <input type="text" class="form-control" id="model" name="model" placeholder="Train model">
                                             </div>
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="capacity">Capacity</label>
-                                                <input type="text" class="form-control" id="capacity" placeholder="Train capacity">
+                                                <input type="text" class="form-control" id="capacity" name="capacity" placeholder="Train capacity">
                                             </div>
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="speed">Capacity</label>
-                                                <input type="text" class="form-control" id="speed" placeholder="Train speed">
+                                                <input type="text" class="form-control" id="speed" name="averageSpeed" placeholder="Train speed">
                                             </div>
 
 
@@ -424,7 +424,7 @@
                                                 <td th:utext="${train.name}"/>
                                                 <td th:utext="${train.model}"/>
                                                 <td th:utext="${train.capacity}"/>
-                                                <td th:utext="${train.speed}"/>
+                                                <td th:utext="${train.averageSpeed}"/>
                                             </tr>
                                             </tbody>
                                         </table>

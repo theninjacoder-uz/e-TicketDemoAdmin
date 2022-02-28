@@ -16,7 +16,7 @@ public class PassengerService {
     public final ObjectMapper objectMapper;
     public final RestTemplate restTemplate;
 
-    public List<PassengerResponseDto> getPassengerList() {
+    public List<PassengerResponseDto> getList() {
         ApiResponse forObject = restTemplate.getForObject(BASE_URL + "list", ApiResponse.class);
 
         assert forObject != null;

@@ -16,7 +16,7 @@ public class PassengerController {
 
     @GetMapping
     public String getPassengerList(Model model){
-        model.addAttribute("passengers", passengerService.getPassengerList());
+        model.addAttribute("passengers", passengerService.getList());
         return "passenger";
     }
 
