@@ -1,12 +1,10 @@
 package uz.pdp.eticketdemoadmin.service.user;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import uz.pdp.eticketdemoadmin.model.recieve.PassengerResponseDto;
+import uz.pdp.eticketdemoadmin.model.recieve.user.PassengerResponseDto;
 import uz.pdp.eticketdemoadmin.response.ApiResponse;
 
 import java.util.List;
@@ -18,7 +16,7 @@ public class PassengerService {
     public final ObjectMapper objectMapper;
     public final RestTemplate restTemplate;
 
-    public List<PassengerResponseDto> getPassengerList() {
+    public List<PassengerResponseDto> getList() {
         ApiResponse forObject = restTemplate.getForObject(BASE_URL + "list", ApiResponse.class);
 
         assert forObject != null;
