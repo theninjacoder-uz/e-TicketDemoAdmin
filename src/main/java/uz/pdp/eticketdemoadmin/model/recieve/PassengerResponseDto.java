@@ -7,5 +7,7 @@ public class PassengerResponseDto {
     private String firstName;
     private String lastName;
     private String gender;
-    private Date birthDate;
+    private String citizenship;
+    private String passportNumber;
+        private Date birthDate;
 }

@@ -16,7 +16,7 @@ public class UserService {
     public final RestTemplate restTemplate;
 
     public boolean login(UserReceiveDto userReceiveDto){
-        String response = restTemplate.postForObject(BASE_URL+"login", userReceiveDto, String.class);
+        String response = restTemplate.postForObject( BASE_URL+ "login", userReceiveDto, String.class);
         try {
             Boolean resp = objectMapper.readValue(response, Boolean.class);
             return resp;

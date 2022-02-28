@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
 
-    @GetMapping("/user-table")
+    @GetMapping("/passenger-table")
     public String getUserTable(){
-        return "user-table";
+        return "passenger-table";
     }
 }
