@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class DirectionService {
-    private String BASE_URL = "http://127.0.0.1:8080/api/train/";
+    private String BASE_URL = "http://127.0.0.1:8080/api/direction/";
     public final ObjectMapper objectMapper;
     public final RestTemplate restTemplate;
 
