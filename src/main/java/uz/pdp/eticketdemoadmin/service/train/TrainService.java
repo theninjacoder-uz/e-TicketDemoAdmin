@@ -3,15 +3,19 @@ package uz.pdp.eticketdemoadmin.service.train;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.RestTemplate;
 import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
 import uz.pdp.eticketdemoadmin.response.ApiResponse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -29,13 +33,26 @@ public class TrainService {
     }
 
     public boolean add(TrainReceiveDto trainReceiveDto) {
-        trainReceiveDto.setAvailableSeatNumber(trainReceiveDto.getCapacity());
 
         ApiResponse response = restTemplate.postForObject(BASE_URL + "add", trainReceiveDto, ApiResponse.class);
 
         if (response.getStatusCode() == 1)
             return true;
+        return false;
+    }
 
+    public boolean delete(Long id) {
+//        Map<String, Long> mid = new HashMap<>();
+//        mid.put("id", id);
+
+//        ApiResponse response = restTemplate.execute(BASE_URL + "delete?="+id, HttpMethod.DELETE, );
+
+        //TODO use restTemplate execute
+//        restTemplate.delete(BASE_URL + "delete?=" + id, mid);
+
+        ApiResponse response = restTemplate.getForObject(BASE_URL + "delete?id=" + id, ApiResponse.class);
+        if (response.getStatusCode() == 1)
+            return true;
         return false;
     }
 }
