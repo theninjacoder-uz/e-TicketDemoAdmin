@@ -377,36 +377,36 @@
                         <div class="col-12 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title">Add new train</h4>
-                                    <form th:action="@{/train}" method="POST">
+                                    <h4 class="header-title">Edit train</h4>
+                                    <form method="POST" th:action="@{'/train/edit?id=' + ${train.id}}">
                                         <div class="form-row align-items-center">
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="name">Name</label>
                                                 <input type="text" class="form-control" id="name" name="name"
-                                                       placeholder="Train name">
+                                                       placeholder="Train name" th:value="${train.name}">
                                             </div>
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="model">Model</label>
                                                 <input type="text" class="form-control" id="model" name="model"
-                                                       placeholder="Train model">
+                                                       placeholder="Train model" th:value="${train.model}">
                                             </div>
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="capacity">Capacity</label>
                                                 <input type="text" class="form-control" id="capacity" name="capacity"
-                                                       placeholder="Train capacity">
+                                                       placeholder="Train capacity" th:value="${train.capacity}">
                                             </div>
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="speed">Speed</label>
                                                 <input type="text" class="form-control" id="speed" name="averageSpeed"
-                                                       placeholder="Train speed">
+                                                       placeholder="Train speed" th:value="${train.averageSpeed}">
                                             </div>
 
 
                                             <div class="col-auto my-1">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-primary">Edit</button>
                                             </div>
                                         </div>
                                     </form>
@@ -414,49 +414,6 @@
                             </div>
                         </div>
                         <!-- basic form end -->
-
-                        <div class="col-12 mt-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="header-title">Train list</h4>
-                                    <div class="data-tables datatable-dark">
-                                        <table id="dataTable3" class="text-center">
-                                            <thead class="text-capitalize">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Model</th>
-                                                <th>Capacity</th>
-                                                <th>Speed</th>
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr th:each="train: ${trains}">
-                                                <td th:utext="${train.name}"/>
-                                                <td th:utext="${train.model}"/>
-                                                <td>
-                                                    <span th:text="${train.capacity}"></span>
-                                                    <span>
-                                                        <ul class="d-flex justify-content-end">
-                                                            <li class="mr-3">
-                                                                <a th:href="'/train/edit?id=' + ${train.id}"
-                                                                   class="text-secondary">
-                                                                    <i class="fa fa-edit"></i></a></li>
-                                                            <li>
-                                                                <a th:href="'/train/delete?id=' + ${train.id}"
-                                                                   class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                        </span>
-                                                </td>
-                                                <td th:utext="${train.averageSpeed}"/>
-
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

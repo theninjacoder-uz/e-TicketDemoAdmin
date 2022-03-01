@@ -1,21 +1,15 @@
 package uz.pdp.eticketdemoadmin.service.train;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.RestTemplate;
 import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
 import uz.pdp.eticketdemoadmin.response.ApiResponse;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -54,5 +48,22 @@ public class TrainService {
         if (response.getStatusCode() == 1)
             return true;
         return false;
+    }
+
+    public TrainReceiveDto edit(Long id){
+        ApiResponse response = restTemplate.getForObject(BASE_URL + "get?id=" + id, ApiResponse.class);
+
+            TrainReceiveDto receiveDto = objectMapper.convertValue(response.getData(), TrainReceiveDto.class);
+
+//        Object data = response.getData();
+
+        return receiveDto;
+
+//        return new TrainReceiveDto();
+    }
+
+    public boolean edit(Long id, TrainReceiveDto trainReceiveDto){
+        ApiResponse response = restTemplate.postForObject(BASE_URL + "get?id=" + id, trainReceiveDto, ApiResponse.class);
+        return response.getStatusCode() == 1 ? true : false;
     }
 }
