@@ -9,5 +9,5 @@ public class PassengerResponseDto {
     private String gender;
     private String citizenship;
     private String passportNumber;
-        private Date birthDate;
+    private Date birthDate;
 }
