@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+            name="keywords"
+            content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"
+    />
+    <meta
+            name="description"
+            content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Matrix Rail Way Admin Page</title>
+    <!-- Favicon icon -->
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../assets/images/favicon.png"
+    />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="search.css" rel="stylesheet" />
+
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+
+<body>
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<div
+        id="main-wrapper"
+        data-layout="vertical"
+        data-navbarbg="skin5"
+        data-sidebartype="full"
+        data-sidebar-position="absolute"
+        data-header-position="absolute"
+        data-boxed-layout="full">
+    <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin5">
+                <a class="navbar-brand" href="index.html">
+                    <!-- Logo icon -->
+                    <b class="logo-icon ps-2">
+                        <img
+                                src="../assets/images/logo-icon.png"
+                                alt="homepage"
+                                class="light-logo"
+                                width="25"
+                        />
+                    </b>
+                    <span class="logo-text ms-2">
+                <img
+                        src="../assets/images/logo-text.png"
+                        alt="homepage"
+                        class="light-logo"
+                />
+              </span>
+                </a>
+                <a
+                        class="nav-toggler waves-effect waves-light d-block d-md-none"
+                        href="javascript:void(0)"
+                ><i class="ti-menu ti-close"></i
+                ></a>
+            </div>
+            <div
+                    class="navbar-collapse collapse"
+                    id="navbarSupportedContent"
+                    data-navbarbg="skin5">
+                <ul class="navbar-nav float-start me-auto">
+                    <li class="nav-item d-none d-lg-block">
+                        <a
+                                class="nav-link sidebartoggler waves-effect waves-light"
+                                href="javascript:void(0)"
+                                data-sidebartype="mini-sidebar"
+                        ><i class="mdi mdi-menu font-24"></i
+                        ></a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav float-end">
+                    <li class="nav-item dropdown">
+                        <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                        >
+                            <i class="mdi mdi-bell font-24"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="left-sidebar" data-sidebarbg="skin5">
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav" class="pt-4">
+
+
+
+
+                    <!-- Addons -->
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-move-resize-variant"></i
+                        ><span class="hide-menu">Users </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+
+                            <li class="sidebar-item">
+                                <a href="searchUser.html" class="sidebar-link"
+                                ><i class="mdi mdi-multiplication-box"></i
+                                ><span class="hide-menu"> Search </span></a
+                                >
+
+                            <li class="sidebar-item">
+                                <a href="pages-invoice.html" class="sidebar-link"
+                                ><i class="mdi mdi-bulletin-board"></i
+                                ><span class="hide-menu"> Invoice </span></a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-move-resize-variant"></i
+                        ><span class="hide-menu">Orders </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+
+                            <li class="sidebar-item">
+                                <a href="searchOrderByDate.html" class="sidebar-link"
+                                ><i class="mdi mdi-multiplication-box"></i
+                                ><span class="hide-menu"> Search </span></a
+                                >
+
+                            <li class="sidebar-item">
+                                <a href="pages-invoice.html" class="sidebar-link"
+                                ><i class="mdi mdi-bulletin-board"></i
+                                ><span class="hide-menu"> Invoice </span></a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-move-resize-variant"></i
+                        ><span class="hide-menu">Train </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+
+                            <li class="sidebar-item">
+                                <a href="searchTrain.html" class="sidebar-link"
+                                ><i class="mdi mdi-multiplication-box"></i
+                                ><span class="hide-menu"> Search </span></a
+                                >
+
+                            <li class="sidebar-item">
+                                <a href="pages-invoice.html" class="sidebar-link"
+                                ><i class="mdi mdi-bulletin-board"></i
+                                ><span class="hide-menu"> Invoice </span></a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-move-resize-variant"></i
+                        ><span class="hide-menu">Station </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+
+                            <li class="sidebar-item">
+                                <a href="searchStation.html" class="sidebar-link"
+                                ><i class="mdi mdi-multiplication-box"></i
+                                ><span class="hide-menu"> Search </span></a
+                                >
+
+                            <li class="sidebar-item">
+                                <a href="pages-invoice.html" class="sidebar-link"
+                                ><i class="mdi mdi-bulletin-board"></i
+                                ><span class="hide-menu"> Invoice </span></a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-move-resize-variant"></i
+                        ><span class="hide-menu">Direction </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+
+                            <li class="sidebar-item">
+                                <a href="searchDirection.html" class="sidebar-link"
+                                ><i class="mdi mdi-multiplication-box"></i
+                                ><span class="hide-menu"> Search </span></a
+                                >
+
+                            <li class="sidebar-item">
+                                <a href="pages-invoice.html" class="sidebar-link"
+                                ><i class="mdi mdi-bulletin-board"></i
+                                ><span class="hide-menu"> Invoice </span></a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-move-resize-variant"></i
+                        ><span class="hide-menu">Schedule </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+
+                            <li class="sidebar-item">
+                                <a href="searchSchedule.html" class="sidebar-link"
+                                ><i class="mdi mdi-multiplication-box"></i
+                                ><span class="hide-menu"> Search </span></a
+                                >
+
+                            <li class="sidebar-item">
+                                <a href="pages-invoice.html" class="sidebar-link"
+                                ><i class="mdi mdi-bulletin-board"></i
+                                ><span class="hide-menu"> Invoice </span></a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Authentication -->
+                    <li class="sidebar-item">
+                        <a
+                                class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)"
+                                aria-expanded="false"
+                        ><i class="mdi mdi-account-key"></i
+                        ><span class="hide-menu">Authentication </span></a
+                        >
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="authentication-login.html" class="sidebar-link"
+                                ><i class="mdi mdi-all-inclusive"></i
+                                ><span class="hide-menu"> Login </span></a
+                                >
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="authentication-register.html" class="sidebar-link"
+                                ><i class="mdi mdi-all-inclusive"></i
+                                ><span class="hide-menu"> Register </span></a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Dashboard</h4>
+                    <div class="ms-auto text-end">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Library
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testbox">
+            <form action="/">
+
+                <div class="item">
+                    <!--            <p>Email</p>-->
+                    <input type="name" name="name"placeholder="Station"/>
+                </div>
+
+
+                <div class="item">
+                    <!--            <p>Reservation Date</p>-->
+                    <input type="date" name="bdate" required/>
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+
+                <div class="btn-block">
+                    <button type="submit" href="/">Search</button>
+                </div>
+            </form>
+        </div>
+        <footer class="footer text-center">
+            All Rights Reserved by Matrix-admin. Designed and Developed by
+            <a href="https://www.wrappixel.com">WrapPixel</a>.
+        </footer>
+    </div>
+</div>
+<script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+<script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+<!--Wave Effects -->
+<script src="../dist/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="../dist/js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src="../dist/js/custom.min.js"></script>
+<script src="../assets/libs/flot/excanvas.js"></script>
+<script src="../assets/libs/flot/jquery.flot.js"></script>
+<script src="../assets/libs/flot/jquery.flot.pie.js"></script>
+<script src="../assets/libs/flot/jquery.flot.time.js"></script>
+<script src="../assets/libs/flot/jquery.flot.stack.js"></script>
+<script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
+<script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+<script src="../dist/js/pages/chart/chart-page-init.js"></script>
+</body>
+</html>
+
+
+
+
+
