@@ -350,7 +350,7 @@
                 <div class="col-sm-6 clearfix">
                     <div class="user-profile pull-right">
                         <img class="avatar user-thumb" src="../static/assets/images/author/avatar.png" alt="avatar">
-                        <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                        <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Dolories <i class="fa fa-angle-down"></i></h4>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Message</a>
                             <a class="dropdown-item" href="#">Settings</a>
@@ -370,27 +370,12 @@
                         <div class="col-12 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title">Add new train</h4>
-                                    <form th:action="@{/train}"  method="POST">
+                                    <h4 class="header-title">Add new direction</h4>
+                                    <form th:action="@{/direction}"  method="POST">
                                         <div class="form-row align-items-center">
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="name">Name</label>
-                                                <input type="text" class="form-control" id="name" name="name" placeholder="Train name">
-                                            </div>
-
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="model">Model</label>
-                                                <input type="text" class="form-control" id="model" name="model" placeholder="Train model">
-                                            </div>
-
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="capacity">Capacity</label>
-                                                <input type="text" class="form-control" id="capacity" name="capacity" placeholder="Train capacity">
-                                            </div>
-
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="speed">Capacity</label>
-                                                <input type="text" class="form-control" id="speed" name="averageSpeed" placeholder="Train speed">
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Direction name">
                                             </div>
 
 
@@ -407,24 +392,22 @@
                         <div class="col-12 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title">Train list</h4>
+                                    <h4 class="header-title">Direction list</h4>
                                     <div class="data-tables datatable-dark">
                                         <table id="dataTable3" class="text-center">
                                             <thead class="text-capitalize">
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Model</th>
-                                                <th>Capacity</th>
-                                                <th>Speed</th>
+                                                <th>Created Date</th>
+                                                <th>Last Updated Date</th>
+
 
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each = "train: ${trains}">
-                                                <td th:utext="${train.name}"/>
-                                                <td th:utext="${train.model}"/>
-                                                <td th:utext="${train.capacity}"/>
-                                                <td th:utext="${train.averageSpeed}"/>
+                                            <!--/*@thymesVar id="directions" type=""*/-->
+                                            <tr th:each = "direction: ${directions}">
+                                                <td th:utext="${direction.name}"/>
                                             </tr>
                                             </tbody>
                                         </table>
