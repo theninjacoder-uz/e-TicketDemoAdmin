@@ -45,25 +45,21 @@ public class TrainService {
 //        restTemplate.delete(BASE_URL + "delete?=" + id, mid);
 
         ApiResponse response = restTemplate.getForObject(BASE_URL + "delete?id=" + id, ApiResponse.class);
+        assert response != null;
         if (response.getStatusCode() == 1)
             return true;
         return false;
     }
 
-    public TrainReceiveDto edit(Long id){
+    public TrainReceiveDto getById(Long id) {
         ApiResponse response = restTemplate.getForObject(BASE_URL + "get?id=" + id, ApiResponse.class);
-
-            TrainReceiveDto receiveDto = objectMapper.convertValue(response.getData(), TrainReceiveDto.class);
-
-//        Object data = response.getData();
-
-        return receiveDto;
-
-//        return new TrainReceiveDto();
+        assert response != null;
+        return objectMapper.convertValue(response.getData(), TrainReceiveDto.class);
     }
 
-    public boolean edit(Long id, TrainReceiveDto trainReceiveDto){
+    public boolean edit(Long id, TrainReceiveDto trainReceiveDto) {
         ApiResponse response = restTemplate.postForObject(BASE_URL + "get?id=" + id, trainReceiveDto, ApiResponse.class);
-        return response.getStatusCode() == 1 ? true : false;
+        assert response != null;
+        return response.getStatusCode() == 1 ;
     }
 }

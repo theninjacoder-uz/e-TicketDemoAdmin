@@ -439,11 +439,13 @@
                                                     <span>
                                                         <ul class="d-flex justify-content-end">
                                                             <li class="mr-3">
-                                                                <a th:href="'/train/edit?id=' + ${train.id}"
+                                                                <a th:href="@{'/train/edit/' + ${train.id}}"
                                                                    class="text-secondary">
-                                                                    <i class="fa fa-edit"></i></a></li>
+                                                                    <i class="fa fa-edit"></i>
+                                                                </a>
+                                                            </li>
                                                             <li>
-                                                                <a th:href="'/train/delete?id=' + ${train.id}"
+                                                                <a th:href="@{'/train/delete?id='+${train.id}}"
                                                                    class="text-danger"><i class="ti-trash"></i></a></li>
                                                         </ul>
                                                         </span>
