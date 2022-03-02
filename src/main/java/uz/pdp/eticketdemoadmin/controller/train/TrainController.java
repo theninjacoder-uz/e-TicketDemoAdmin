@@ -5,7 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
+import uz.pdp.eticketdemoadmin.model.receive.train.TrainReceiveDto;
 import uz.pdp.eticketdemoadmin.service.train.TrainService;
 
 @Controller

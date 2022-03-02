@@ -1,4 +1,4 @@
-package uz.pdp.eticketdemoadmin.model.recieve.user;
+package uz.pdp.eticketdemoadmin.model.receive.user;
 
 import lombok.Data;
 

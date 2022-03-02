@@ -1,13 +1,12 @@
 package uz.pdp.eticketdemoadmin.service.train;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
+import uz.pdp.eticketdemoadmin.model.receive.train.TrainReceiveDto;
 import uz.pdp.eticketdemoadmin.response.ApiResponse;
 
 import java.util.ArrayList;

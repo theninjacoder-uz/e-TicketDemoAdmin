@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import uz.pdp.eticketdemoadmin.model.recieve.user.UserReceiveDto;
+import uz.pdp.eticketdemoadmin.model.receive.user.UserReceiveDto;
 import uz.pdp.eticketdemoadmin.service.user.UserService;
 
 @Controller

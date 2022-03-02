@@ -1,4 +1,4 @@
-package uz.pdp.eticketdemoadmin.model.recieve.train;
+package uz.pdp.eticketdemoadmin.model.receive.train;
 
 import lombok.Data;
 
