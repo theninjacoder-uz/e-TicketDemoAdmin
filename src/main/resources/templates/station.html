@@ -377,33 +377,54 @@
                         <div class="col-12 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title">Add new train</h4>
-                                    <form th:action="@{/train}" method="POST">
+                                    <h4 class="header-title">Add new Station</h4>
+                                    <form th:action="@{/station/add}" method="POST">
                                         <div class="form-row align-items-center">
+
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="name">Name</label>
                                                 <input type="text" class="form-control" id="name" name="name"
-                                                       placeholder="Train name">
+                                                       placeholder="Station name">
                                             </div>
 
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="model">Model</label>
-                                                <input type="text" class="form-control" id="model" name="model"
-                                                       placeholder="Train model">
+                                            <div class="col-sm-3 my-1 col-sm-3 my-1">
+                                                <label class="sr-only" for="street">Address</label>
+                                                <input type="text" class="form-control" id="street" name="streetName"
+                                                       placeholder="Street name">
                                             </div>
 
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="capacity">Capacity</label>
-                                                <input type="text" class="form-control" id="capacity" name="capacity"
-                                                       placeholder="Train capacity">
+
+                                            <div class="col-sm-3 my-1 col-sm-3 my-1">
+                                                <label class="sr-only" for="home">Address</label>
+                                                <input type="text" class="form-control" id="home" name="homeNumber"
+                                                       placeholder="Home number">
                                             </div>
 
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="speed">Speed</label>
-                                                <input type="text" class="form-control" id="speed" name="averageSpeed"
-                                                       placeholder="Train speed">
+
+                                            <!--                        country select start -->
+
+                                            <div class="col-sm-3 my-1 form-group">
+                                                <!--                          <label class="col-form-label">Choose country</label>-->
+                                                <select class="form-control crs-country" data-region-id="one"
+                                                        name="countryId">
+                                                    <option>Choose country</option>
+                                                    <option th:each="country:${countries}" th:value="${country.id}"
+                                                            th:text="${country.name}"></option>
+                                                </select>
                                             </div>
 
+                                            <div class="col-sm-3 my-1 form-group">
+                                                <!--                          <label class="col-form-label">Choose region</label>-->
+                                                <select class="form-control crs-country" data-region-id="one"
+                                                        name="regionId">
+                                                    <option>Choose region</option>
+                                                    <option th:each="region, iter:${countries[0].regionList}"
+                                                            th:value="${region.id}" th:text="${region.region}"></option>
+                                                </select>
+                                            </div>
+
+
+                                            <!--                        country select end -->
 
                                             <div class="col-auto my-1">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -424,34 +445,32 @@
                                             <thead class="text-capitalize">
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Model</th>
-                                                <th>Capacity</th>
-                                                <th>Speed</th>
-
+                                                <th>Region id</th>
+                                                <th>Street</th>
+                                                <th>Home</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="train: ${trains}">
-                                                <td th:utext="${train.name}"/>
-                                                <td th:utext="${train.model}"/>
+                                            <tr th:each="station: ${stations}">
+                                                <td th:utext="${station.name}"/>
+                                                <td th:utext="${station.address.regionId}"/>
+                                                <td th:utext="${station.address.streetName}"/>
+                                                <td th:utext="${station.address.homeNumber}"/>
                                                 <td>
-                                                    <span th:text="${train.capacity}"></span>
                                                     <span>
                                                         <ul class="d-flex justify-content-end">
                                                             <li class="mr-3">
-                                                                <a th:href="@{'/train/edit/' + ${train.id}}"
+                                                                <a th:href="@{'/station/edit/' + ${station.id}}"
                                                                    class="text-secondary">
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a th:href="@{'/train/delete?id='+${train.id}}"
+                                                                <a th:href="@{'/statoin/delete?id='+${station.id}}"
                                                                    class="text-danger"><i class="ti-trash"></i></a></li>
                                                         </ul>
-                                                        </span>
+                                                    </span>
                                                 </td>
-                                                <td th:utext="${train.averageSpeed}"/>
-
                                             </tr>
                                             </tbody>
                                         </table>
@@ -676,3 +695,6 @@
 </body>
 
 </html>
+
+
+

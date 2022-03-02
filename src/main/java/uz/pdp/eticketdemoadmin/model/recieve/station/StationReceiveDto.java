@@ -1,18 +1,16 @@
-package uz.pdp.eticketdemoadmin.model.recieve.train;
+package uz.pdp.eticketdemoadmin.model.recieve.station;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import uz.pdp.eticketdemoadmin.model.recieve.address.AddressResponseDto;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TrainReceiveDto {
+public class StationReceiveDto {
     private long id;
     private String name;
-    private String model;
-    private Integer capacity;
-    private double averageSpeed;
+    private AddressResponseDto address;
 }
