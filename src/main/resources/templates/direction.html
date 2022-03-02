@@ -400,14 +400,23 @@
                                                 <th>Name</th>
                                                 <th>Created Date</th>
                                                 <th>Last Updated Date</th>
-
-
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <!--/*@thymesVar id="directions" type=""*/-->
                                             <tr th:each = "direction: ${directions}">
                                                 <td th:utext="${direction.name}"/>
+                                                <td>
+<!--                                                    <span th:text="${train.capacity}"></span>-->
+                                                    <span>
+                                                    <ul class="d-flex justify-content-end">
+                                                        <li class="mr-3">
+                                                            <a th:href="'/direction/edite?id=' + ${direction.id}" class="text-secondary">
+                                                                <i class="fa fa-edit"></i></a></li>
+                                                        <li><a th:href="'/direction/delete?id=' + ${direction.id}"  class="text-danger"><i class="ti-trash"></i></a></li>
+                                                    </ul>
+                                                        </span>
+                                                </td>
                                             </tr>
                                             </tbody>
                                         </table>

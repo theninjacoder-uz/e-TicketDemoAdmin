@@ -4,11 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import uz.pdp.eticketdemoadmin.model.recieve.direction.DirectionDto;
+import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
 import uz.pdp.eticketdemoadmin.service.direction.DirectionService;
 
 @Controller
@@ -19,7 +18,7 @@ public class DirectionController {
     private final DirectionService directionService;
 
     @GetMapping
-    public String getTrainPage(Model model){
+    public String getDirectionPage(Model model){
         model.addAttribute("directions", directionService.getList());
         return "direction";
     }
@@ -29,6 +28,30 @@ public class DirectionController {
         boolean add = directionService.add(directionDto);
         model.addAttribute("directions", directionService.getList());
         return "direction";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id){
+        boolean delete = directionService.delete(id);
+        if(delete)
+            return "redirect:/direction";
+        else
+            return "404";
+    }
+
+    @GetMapping("/edit")
+    public ModelAndView edit(@RequestParam("id") Long id, Model model){
+        DirectionDto edit = directionService.edit(id);
+        model.addAttribute("direction", edit);
+
+        return new ModelAndView("/direction-edit");
+    }
+
+    @PostMapping("/edit")
+    public String edit(@RequestParam("id") Long id, @ModelAttribute DirectionDto directionDto){
+        boolean edit = directionService.edit(id, directionDto);
+
+        return "redirect:/direction";
     }
 
 }
