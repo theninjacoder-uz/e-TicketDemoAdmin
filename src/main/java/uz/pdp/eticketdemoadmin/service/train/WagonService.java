@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
 import uz.pdp.eticketdemoadmin.model.recieve.train.WagonReceiveDto;
 import uz.pdp.eticketdemoadmin.response.ApiResponse;
 
@@ -49,21 +50,15 @@ public class WagonService {
         return response != null && response.getStatusCode() == 1;
     }
 
-    public WagonReceiveDto edit(Long id){
-//        ApiResponse response = restTemplate.getForObject(BASE_URL + "get?id=" + id, ApiResponse.class);
-//
-//        WagonReceiveDto receiveDto = objectMapper.convertValue(response.getData(), WagonReceiveDto.class);
-//
-////        Object data = response.getData();
-//
-//        return receiveDto;
-//
-        return new WagonReceiveDto();
+    public WagonReceiveDto getById(Long id) {
+        ApiResponse response = restTemplate.getForObject(BASE_URL + "get?id=" + id, ApiResponse.class);
+        assert response != null;
+        return objectMapper.convertValue(response.getData(), WagonReceiveDto.class);
     }
 
     public boolean edit(Long id, WagonReceiveDto wagonDto){
-//        ApiResponse response = restTemplate.postForObject(BASE_URL + "get?id=" + id, wagonDto, ApiResponse.class);
-//        return response.getStatusCode() == 1 ? true : false;
-        return false;
+        ApiResponse response = restTemplate.postForObject(BASE_URL + "get?id=" + id, wagonDto, ApiResponse.class);
+        assert response != null;
+        return response.getStatusCode() == 1 ;
     }
 }

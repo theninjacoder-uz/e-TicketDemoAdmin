@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import uz.pdp.eticketdemoadmin.model.recieve.direction.DirectionDto;
+import uz.pdp.eticketdemoadmin.model.recieve.train.WagonReceiveDto;
 import uz.pdp.eticketdemoadmin.response.ApiResponse;
 
 import java.util.ArrayList;
@@ -50,22 +51,16 @@ public class DirectionService {
         return response != null && response.getStatusCode() == 1;
     }
 
-    public DirectionDto edit(Long id){
-//        ApiResponse response = restTemplate.getForObject(BASE_URL + "get?id=" + id, ApiResponse.class);
-//
-//        DirectionDto receiveDto = objectMapper.convertValue(response.getData(), DirectionDto.class);
-//
-////        Object data = response.getData();
-//
-//        return receiveDto;
-//
-          return new DirectionDto();
+    public DirectionDto getById(Long id) {
+        ApiResponse response = restTemplate.getForObject(BASE_URL + "get?id=" + id, ApiResponse.class);
+        assert response != null;
+        return objectMapper.convertValue(response.getData(), DirectionDto.class);
     }
 
     public boolean edit(Long id, DirectionDto directionDto){
-//        ApiResponse response = restTemplate.postForObject(BASE_URL + "get?id=" + id, directionDto, ApiResponse.class);
-//        return response.getStatusCode() == 1 ? true : false;
-        return false;
+        ApiResponse response = restTemplate.postForObject(BASE_URL + "get?id=" + id, directionDto, ApiResponse.class);
+        assert response != null;
+        return response.getStatusCode() == 1 ;
     }
 
 }

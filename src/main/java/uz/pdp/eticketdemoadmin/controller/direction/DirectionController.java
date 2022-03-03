@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import uz.pdp.eticketdemoadmin.model.recieve.direction.DirectionDto;
 import uz.pdp.eticketdemoadmin.model.recieve.train.TrainReceiveDto;
+import uz.pdp.eticketdemoadmin.model.recieve.train.WagonReceiveDto;
 import uz.pdp.eticketdemoadmin.service.direction.DirectionService;
 
 @Controller
@@ -39,12 +40,11 @@ public class DirectionController {
             return "404";
     }
 
-    @GetMapping("/edit")
-    public ModelAndView edit(@RequestParam("id") Long id, Model model){
-        DirectionDto edit = directionService.edit(id);
-        model.addAttribute("direction", edit);
-
-        return new ModelAndView("/direction-edit");
+    @GetMapping(value = "/edit/{id}")
+    public String edit(@PathVariable("id") Long id, Model model){
+        DirectionDto direction = directionService.getById(id);
+        model.addAttribute("direction", direction);
+        return "direction-edit";
     }
 
     @PostMapping("/edit")

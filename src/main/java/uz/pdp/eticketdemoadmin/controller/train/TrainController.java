@@ -45,7 +45,7 @@ public class TrainController {
     public String edit(@PathVariable("id") Long id, Model model){
         TrainReceiveDto train = trainService.getById(id);
         model.addAttribute("train", train);
-        return "login";
+        return "train-edit";
     }
 
     @PostMapping(value = "/edit")
