@@ -393,27 +393,23 @@
                                                        placeholder="Street name">
                                             </div>
 
-
                                             <div class="col-sm-3 my-1 col-sm-3 my-1">
                                                 <label class="sr-only" for="home">Address</label>
                                                 <input type="text" class="form-control" id="home" name="homeNumber"
                                                        placeholder="Home number">
                                             </div>
-
-
                                             <!--                        country select start -->
-
                                             <div class="col-sm-3 my-1 form-group">
                                                 <!--                          <label class="col-form-label">Choose country</label>-->
-                                                <select class="form-control crs-country" data-region-id="one"
+                                                <select class="form-control crs-country" data-region-id="one" onchange="selectedCountry(this)"
                                                         name="countryId">
                                                     <option>Choose country</option>
-                                                    <option th:each="country:${countries}" th:value="${country.id}"
+                                                    <option th:each="country : ${countries}" th:value="${country.id}"
                                                             th:text="${country.name}"></option>
                                                 </select>
                                             </div>
 
-                                            <div class="col-sm-3 my-1 form-group">
+                                            <div class="col-sm-3 my-1 form-group" id="regionSelect">
                                                 <!--                          <label class="col-form-label">Choose region</label>-->
                                                 <select class="form-control crs-country" data-region-id="one"
                                                         name="regionId">
@@ -422,10 +418,7 @@
                                                             th:value="${region.id}" th:text="${region.region}"></option>
                                                 </select>
                                             </div>
-
-
                                             <!--                        country select end -->
-
                                             <div class="col-auto my-1">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
@@ -692,6 +685,14 @@
 <!-- others plugins -->
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/scripts.js"></script>
+<script>
+    function selectedCountry(item){
+        // let value = document.getElementById("regionId").value;
+       let countryName = item.getParameter("name");
+       alert(countryName);
+
+    }
+</script>
 </body>
 
 </html>
