@@ -380,31 +380,31 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title">Add new Station</h4>
-                                    <form th:action="@{/station/add}" method="POST">
+                                    <form th:action="@{'/station/edit?id=' + ${station.id}}" method="POST">
                                         <div class="form-row align-items-center">
 
                                             <div class="col-sm-3 my-1">
                                                 <label class="sr-only" for="name">Name</label>
                                                 <input type="text" class="form-control" id="name" name="name"
-                                                       placeholder="Station name">
+                                                       placeholder="Station name" th:value="${station.name}">
                                             </div>
 
                                             <div class="col-sm-3 my-1 col-sm-3 my-1">
                                                 <label class="sr-only" for="street">Address</label>
                                                 <input type="text" class="form-control" id="street" name="streetName"
-                                                       placeholder="Street name">
+                                                       placeholder="Street name" th:value="${station.address.streetName}">
                                             </div>
 
                                             <div class="col-sm-3 my-1 col-sm-3 my-1">
                                                 <label class="sr-only" for="home">Address</label>
                                                 <input type="text" class="form-control" id="home" name="homeNumber"
-                                                       placeholder="Home number">
+                                                       placeholder="Home number" th:value="${station.address.homeNumber}">
                                             </div>
                                             <!--                        country select start -->
                                             <div class="col-sm-3 my-1 form-group">
                                                 <!--                          <label class="col-form-label">Choose country</label>-->
                                                 <select class="form-control crs-country" data-region-id="one" onchange="selectedCountry(this)"
-                                                        name="countryId">
+                                                        name="countryId" >
                                                     <option>Choose country</option>
                                                     <option th:each="country, index : ${countries}" th:value="${country.id}"
                                                             th:text="${country.name}"></option>
@@ -431,49 +431,6 @@
                             </div>
                         </div>
                         <!-- basic form end -->
-
-                        <div class="col-12 mt-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="header-title">Train list</h4>
-                                    <div class="data-tables datatable-dark">
-                                        <table id="dataTable3" class="text-center">
-                                            <thead class="text-capitalize">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Region id</th>
-                                                <th>Street</th>
-                                                <th>Home</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr th:each="station:${stations}">
-                                                <td th:utext="${station.name}"/>
-                                                <td th:utext="${station.address.regionId}"/>
-                                                <td th:utext="${station.address.streetName}"/>
-                                                <td th:utext="${station.address.homeNumber}"/>
-                                                <td>
-                                                    <span>
-                                                        <ul class="d-flex justify-content-end">
-                                                            <li class="mr-3">
-                                                                <a th:href="@{'/station/edit/' + ${station.id}}"
-                                                                   class="text-secondary">
-                                                                    <i class="fa fa-edit"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a th:href="@{'/station/delete?id='+${station.id}}"
-                                                                   class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

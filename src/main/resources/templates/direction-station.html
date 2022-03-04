@@ -380,34 +380,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title">Add new Station</h4>
-                                    <form th:action="@{/station/add}" method="POST">
+                                    <form th:action="@{/direction-station/add}" method="POST">
                                         <div class="form-row align-items-center">
 
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="name">Name</label>
-                                                <input type="text" class="form-control" id="name" name="name"
-                                                       placeholder="Station name">
-                                            </div>
-
-                                            <div class="col-sm-3 my-1 col-sm-3 my-1">
-                                                <label class="sr-only" for="street">Address</label>
-                                                <input type="text" class="form-control" id="street" name="streetName"
-                                                       placeholder="Street name">
-                                            </div>
-
-                                            <div class="col-sm-3 my-1 col-sm-3 my-1">
-                                                <label class="sr-only" for="home">Address</label>
-                                                <input type="text" class="form-control" id="home" name="homeNumber"
-                                                       placeholder="Home number">
-                                            </div>
                                             <!--                        country select start -->
                                             <div class="col-sm-3 my-1 form-group">
                                                 <!--                          <label class="col-form-label">Choose country</label>-->
                                                 <select class="form-control crs-country" data-region-id="one" onchange="selectedCountry(this)"
                                                         name="countryId">
-                                                    <option>Choose country</option>
-                                                    <option th:each="country, index : ${countries}" th:value="${country.id}"
-                                                            th:text="${country.name}"></option>
+                                                    <option>Choose direction</option>
+                                                    <option th:each="direction : ${directions}" th:value="${direction.id}"
+                                                            th:text="${direction.name}"></option>
                                                 </select>
 
                                             </div>
@@ -416,11 +399,25 @@
                                                 <!--                          <label class="col-form-label">Choose region</label>-->
                                                 <select class="form-control crs-country" data-region-id="one"
                                                         name="regionId">
-                                                    <option>Choose region</option>
-                                                    <option th:each="region, iter:${countries[0].regionList}"
-                                                            th:value="${region.id}" th:text="${region.region}"></option>
+                                                    <option>Choose station</option>
+                                                    <option th:each="station: ${stations}"
+                                                            th:value="${station.id}" th:text="${station.name}"></option>
                                                 </select>
                                             </div>
+
+
+                                            <div class="col-sm-3 my-1">
+                                                <label class="sr-only" for="stationOrder">Station order</label>
+                                                <input type="text" class="form-control" id="stationOrder" name="name"
+                                                       placeholder="Station order">
+                                            </div>
+
+                                            <div class="col-sm-3 my-1 col-sm-3 my-1">
+                                                <label class="sr-only" for="distance">distance</label>
+                                                <input type="text" class="form-control" id="distance" name="distanceWithNextStation"
+                                                       placeholder="Distance With Next Station">
+                                            </div>
+
                                             <!--                        country select end -->
                                             <div class="col-auto my-1">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -435,34 +432,28 @@
                         <div class="col-12 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title">Train list</h4>
+                                    <h4 class="header-title">Direction list</h4>
                                     <div class="data-tables datatable-dark">
                                         <table id="dataTable3" class="text-center">
                                             <thead class="text-capitalize">
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Region id</th>
-                                                <th>Street</th>
-                                                <th>Home</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="station:${stations}">
-                                                <td th:utext="${station.name}"/>
-                                                <td th:utext="${station.address.regionId}"/>
-                                                <td th:utext="${station.address.streetName}"/>
-                                                <td th:utext="${station.address.homeNumber}"/>
+                                            <tr th:each="directionStat:${directionStats}">
+                                                <td th:utext="${directionStat.name}"/>
                                                 <td>
                                                     <span>
                                                         <ul class="d-flex justify-content-end">
                                                             <li class="mr-3">
-                                                                <a th:href="@{'/station/edit/' + ${station.id}}"
+                                                                <a th:href="@{'/station/edit/' + ${directionStat.id}}"
                                                                    class="text-secondary">
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a th:href="@{'/station/delete?id='+${station.id}}"
+                                                                <a th:href="@{'/station/delete?id='+${directionStat.id}}"
                                                                    class="text-danger"><i class="ti-trash"></i></a></li>
                                                         </ul>
                                                     </span>

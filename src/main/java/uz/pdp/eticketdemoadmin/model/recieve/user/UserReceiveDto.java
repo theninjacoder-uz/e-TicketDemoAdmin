@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class UserReceiveDto {
-    private String phoneNumber;
+    private String username;
     private String password;
 }

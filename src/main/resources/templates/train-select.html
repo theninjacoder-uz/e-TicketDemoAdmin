@@ -1,0 +1,39 @@
+<div class="col-sm-3 my-1 form-group" id="regionSelect">
+    <!--                          <label class="col-form-label">Choose region</label>-->
+    <select class="form-control crs-country" data-region-id="one"
+            name="regionId">
+        <option>Choose region</option>
+        <option style="cursor: pointer" th:each="region, iter : ${countryRegions}"
+                th:value="${region.id}" th:text="${region.region}"></option>
+    </select>
+</div>
+
+<script type="text/javascript" th:inline="javascript">
+    $( document ).ready(function() {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+
+
+<td th:if="${repPar.fieldType == 'SLS'}">
+    <select data-live-search="true" id="filials" style="cursor: pointer" class="form-control form-control-sm" onchange="filialSelected(this)"
+            th:name="${repPar.paramName}" th:attr="r=${repPar.required ? '1' : null}">
+
+        <option th:if="${!repPar.required}" style="cursor: pointer" value="0">[[#{ALL}]]</option>
+        <option style="cursor: pointer" value="0">[[#{notSelect}]]</option>
+        <option style="cursor: pointer" th:each="dict : ${repPar.dicts}"
+                th:value="${dict.dictId}" th:text="${dict.dictName}"></option>
+    </select>
+</td>
+
+<td th:if="${repPar.fieldType == 'SLSL'}">
+    <div id="localCodes">
+        <select style="cursor: pointer" class="form-control form-control-sm"
+                th:name="${repPar.paramName}" th:attr="r=${repPar.required ? '1' : null}">
+            <option th:if="${!repPar.required}" style="cursor: pointer" value="0">[[#{ALL}]]</option>
+            <option style="cursor: pointer" value="0">[[#{ALL}]]</option>
+            <option style="cursor: pointer" th:each="dict : ${repPar.dicts}"
+                    th:value="${dict.dictId}" th:text="${dict.dictName}"></option>
+        </select>
+    </div>
+</td>
